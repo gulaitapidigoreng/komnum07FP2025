@@ -1,11 +1,10 @@
 import numpy as np
 
+# Function Decleration
 def f(x):
-    """The function to integrate."""
     return 3 * x**5 - 8 * x**4
 
 def f_double_prime(x):
-    """The second derivative of the function."""
     return 60 * x**3 - 96 * x**2
 
 def trapezoidal_rule(func, a, b, n):
