@@ -7,19 +7,8 @@ def f(x):
 def f_double_prime(x):
     return 60 * x**3 - 96 * x**2
 
+# Trapezoidal Formula
 def trapezoidal_rule(func, a, b, n):
-    """
-    Calculates the definite integral using the Trapezoidal Rule.
-
-    Args:
-        func (function): The function to integrate.
-        a (float): The lower limit of integration.
-        b (float): The upper limit of integration.
-        n (int): The number of subintervals.
-
-    Returns:
-        float: The approximate integral value.
-    """
     h = (b - a) / n
     integral = (func(a) + func(b)) / 2
     for i in range(1, n):
@@ -27,26 +16,13 @@ def trapezoidal_rule(func, a, b, n):
     integral *= h
     return integral
 
+# Integral Calculation
 def exact_integral(a, b):
-    """
-    Calculates the exact definite integral of 3x^5 - 8x^4 from a to b.
-    """
     def F(x):
         return (1/2) * x**6 - (8/5) * x**5
     return F(b) - F(a)
 
 def calculate_trapezoidal_error_bound(a, b, n):
-    """
-    Calculates the maximum error bound for the Trapezoidal Rule.
-
-    Args:
-        a (float): The lower limit of integration.
-        b (float): The upper limit of integration.
-        n (int): The number of subintervals.
-
-    Returns:
-        float: The maximum error bound.
-    """
     # Find the maximum of |f''(x)| on the interval [a, b]
     # We check endpoints and critical points of f''(x) within the interval
     x_values_to_check = [a, b]
